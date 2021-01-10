@@ -14,40 +14,10 @@ Why does this file exist, and why not put this in __main__?
 
   Also see (1) from http://click.pocoo.org/5/setuptools/#setuptools-integration
 """
-import sys
 import click
-from discover import Discover
 
-@click.group(invoke_without_command=True)
-@click.version_option()
-@click.pass_context
-def cli(ctx):
-  pass
 
-@cli.command()
-@click.option('--ttl', default=100, help="Time to wait for results", type=int)
-def discover(ttl):
-  """Discover ACRemote devices on the current network"""
-  d = Discover()
-  found_devices = d.run(ttl)
-
-  for dev in found_devices:
-    click.echo("Found ACRemote at %s" % dev._address)
-
-@cli.command()
-@click.argument('host', nargs=1)
-@click.option('--json', default=True, help="Return the result as JSON", type=bool)
-@click.pass_context
-def get(ctx, host, json):
-  """Get ACState from an ACRemote device"""
-  
-  return
-
-@cli.command()
-def set():
-  """Apply the state to an ACRemote device"""
-  return
-  
-
-if __name__ == "__main__":
-  cli()
+@click.command()
+@click.argument('names', nargs=-1)
+def main(names):
+    click.echo(repr(names))

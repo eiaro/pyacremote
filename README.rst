@@ -11,7 +11,7 @@ Overview
       - |docs|
     * - tests
       - | |travis| |appveyor| |requires|
-        | |codecov|
+        | |coveralls| |codecov|
     * - package
       - | |version| |wheel| |supported-versions| |supported-implementations|
         | |commits-since|
@@ -19,9 +19,9 @@ Overview
     :target: https://readthedocs.org/projects/pyacremote
     :alt: Documentation Status
 
-.. |travis| image:: https://api.travis-ci.org/eiaro/pyacremote.svg?branch=master
+.. |travis| image:: https://api.travis-ci.com/eiaro/pyacremote.svg?branch=master
     :alt: Travis-CI Build Status
-    :target: https://travis-ci.org/eiaro/pyacremote
+    :target: https://travis-ci.com/github/eiaro/pyacremote
 
 .. |appveyor| image:: https://ci.appveyor.com/api/projects/status/github/eiaro/pyacremote?branch=master&svg=true
     :alt: AppVeyor Build Status
@@ -30,6 +30,10 @@ Overview
 .. |requires| image:: https://requires.io/github/eiaro/pyacremote/requirements.svg?branch=master
     :alt: Requirements Status
     :target: https://requires.io/github/eiaro/pyacremote/requirements/?branch=master
+
+.. |coveralls| image:: https://coveralls.io/repos/eiaro/pyacremote/badge.svg?branch=master&service=github
+    :alt: Coverage Status
+    :target: https://coveralls.io/r/eiaro/pyacremote
 
 .. |codecov| image:: https://codecov.io/gh/eiaro/pyacremote/branch/master/graphs/badge.svg?branch=master
     :alt: Coverage Status

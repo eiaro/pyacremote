@@ -16,19 +16,19 @@ matrix:
       env:
         - TOXENV=docs
     - env:
-        - TOXENV=py36,codecov
+        - TOXENV=py36,codecov,coveralls
       python: '3.6'
     - env:
-        - TOXENV=py37,codecov
+        - TOXENV=py37,codecov,coveralls
       python: '3.7'
     - env:
-        - TOXENV=py38,codecov
+        - TOXENV=py38,codecov,coveralls
       python: '3.8'
     - env:
-        - TOXENV=py39,codecov
+        - TOXENV=py39,codecov,coveralls
       python: '3.9'
     - env:
-        - TOXENV=pypy3,codecov
+        - TOXENV=pypy3,codecov,coveralls
         - TOXPYTHON=pypy3
       python: 'pypy3'
 before_install:
