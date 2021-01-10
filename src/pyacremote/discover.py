@@ -11,6 +11,14 @@ class ACRemote(object):
         if address is not None:
             self._address = address
 
+    @staticmethod
+    def verifyAddress(address):
+        with urllib.request.urlopen("http://" + address +  "/info") as url:
+            data = json.loads(url.read().decode())
+
+        if data.get("acremote_version"):
+            return ACRemote(address)     
+
     def getState(self, asJson = False):
         with urllib.request.urlopen("http://" + self._address +  "/acstate") as url:
             data = json.loads(url.read().decode())
@@ -30,9 +38,10 @@ class Discover:
         """
         """
         info = zeroconf.get_service_info(serviceType, name)
-        
-        self._foundDevices.append(ACRemote(info.server))
+        dut = ACRemote.verifyAddress(info.parsed_addresses()[0])
 
+        if dut is not None:
+            self._foundDevices.append(dut)
 
     def run(self, ttl=None) -> Optional[ACRemote]:
         """
